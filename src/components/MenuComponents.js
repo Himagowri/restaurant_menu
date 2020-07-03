@@ -2,13 +2,14 @@ import React from 'react';
 import { Card,CardImg,CardImgOverlay,Breadcrumb,BreadcrumbItem,CardTitle} from 'reactstrap';
 import {Link} from 'react-router-dom';
 import {Loading} from './LoadingComponent';
+import {baseUrl } from '../shared/baseUrl';
 //when we click any item in this menu it will be snet as an id to the dishdetailComponent which canbe used to render a specific view for the particular dish id
 function RenderMenuItem({ dish}){
 
     return(
         <Card >
             <Link to={`/menu/${dish.id}`}  >          
-                <CardImg width="100%" src={dish.images} alt={dish.name}/>
+                <CardImg width="100%" src={baseUrl + dish.image} alt={dish.name}/>
                 <CardImgOverlay>
                     <CardTitle>{dish.name}</CardTitle>
                 </CardImgOverlay>
