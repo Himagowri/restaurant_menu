@@ -7,15 +7,17 @@ import {baseUrl } from '../shared/baseUrl';
 function RenderLeader(leaders) {
   return  (
         <div key ={leaders.id} className="col-12 mt-5">
-            <Media tag="li" >
-            <Media left middle>
-                <Media object src={ baseUrl + leaders.image} />
-            </Media>
-            <Media body className="ml-5">
-                <Media heading>{leaders.name}</Media>
-                <p>{leaders.description}</p>
-            </Media>
-            </Media>
+            <Stagger in>
+                <Media tag="li" >
+                <Media left middle>
+                    <Media object src={ baseUrl + leaders.image} />
+                </Media>
+                <Media body className="ml-5">
+                    <Media heading>{leaders.name}</Media>
+                    <p>{leaders.description}</p>
+                </Media>
+                </Media>
+            </Stagger>
         </div>
     );
 }
